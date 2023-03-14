@@ -1,0 +1,33 @@
+.Cube{
+    width: 11%;
+    height: 18%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(0, 0, 0, 0.2);
+}
+.Cube img{
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    cursor: pointer;
+    border-radius: 12px;
+}
+.Cube img:hover{
+    background-color: rgba(0, 195, 255, 0.2);
+}
+.anim1{
+    animation: entrada .3s ease;
+}
+@keyframes entrada {
+    0%{
+        width: 0%;
+        height: 0%;
+    }
+    100%{
+        width: 100%;
+        height: 100%;
+    }
+}

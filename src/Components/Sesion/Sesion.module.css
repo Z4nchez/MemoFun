@@ -1,0 +1,105 @@
+.Sesion{
+    display: grid;
+    width: 90%;
+    height: 90%;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: "tittle tittle tittle tittle tittle tittle"
+                         "scores panel0 panel0 panel0 panel0 panel1"
+                         "scores panel0 panel0 panel0 panel0 panel1"
+                         "scores panel0 panel0 panel0 panel0 panel1"
+                         "scores panel0 panel0 panel0 panel0 panel1"
+                         "panel2 panel0 panel0 panel0 panel0 panel1"
+                         "panel2 panel0 panel0 panel0 panel0 panel1"
+                         "panel2 panel0 panel0 panel0 panel0 panel1"
+                         "panel2 panel0 panel0 panel0 panel0 panel1";
+    font-family: 'Chakra Petch', sans-serif;
+}
+.tittleSesion{
+    grid-area: tittle;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 6vh;
+}
+.tittleCont{
+    width: 100%;
+    height: 80%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    border-bottom: 2px solid rgba(197, 245, 245, 0.3);
+}
+.scores{
+    grid-area: scores;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 22vw;
+    height: 100%;
+    color: aqua;
+    font-size: 0.8rem;
+}
+.scoreGroup{
+    display: flex;
+    margin-bottom: 5px;
+    width: 60%;
+    height: 32px;
+    padding-left: 5%;
+    padding-right: 5%;
+    justify-content:space-between;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(0, 0, 0, 0.2);
+}
+.scoreTittle{
+    display: flex;
+    margin-bottom: 5px;
+    width: 70%;
+    height: 32px;
+    justify-content: center;
+    align-items: center;
+    color: aquamarine;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(0, 0, 0, 0.2);
+}
+.panel0{
+    grid-area: panel0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+.panel1{
+    grid-area: panel1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 22vw;
+    height: 100%;
+}
+.panel2{
+    grid-area: panel2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 22vw;
+    height: 100%;
+}
+.linkSesion{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    width: 100px;
+    height: 32px;
+    color: rgb(197, 245, 245);
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+.linkSesion:hover{
+    color: aqua;
+}
