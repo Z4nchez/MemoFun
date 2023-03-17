@@ -34,7 +34,7 @@
     color: aqua;
 }
 .button{
-    width: 20%;
+    width: 30%;
     height: 100%;
     display: flex;
     justify-content: center;
@@ -68,6 +68,7 @@
     align-items: center;
     flex-wrap: wrap;
     gap: 6px;
+    overflow-y: auto;
 }
 .logos img{
     width: 60px;
@@ -93,6 +94,7 @@
     align-items: center;
     flex-wrap: wrap;
     gap: 6px;
+    overflow-y: auto;
 }
 .back{
     width: 60px;
@@ -101,8 +103,8 @@
     border: 2px solid rgba(255, 255, 255, 0.2);
 }
 .back1{
-    background: rgb(255,255,255);
-    background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(96,96,96,1) 100%);
+    background: rgb(147,147,147);
+    background: linear-gradient(0deg, rgba(147,147,147,1) 0%, rgba(176,176,176,1) 100%);
 }
 .back2{
     background: rgb(195,124,124);
@@ -145,6 +147,36 @@
     background: linear-gradient(0deg, rgba(99,0,0,1) 0%, rgba(237,255,88,1) 100%);
 }
 .back12{
-    background: rgb(0,0,0);
-    background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(49,92,93,1) 100%);
+    background: rgb(202,231,232);
+    background: radial-gradient(circle, rgba(202,231,232,1) 0%, rgba(181,183,200,1) 46%, rgba(69,69,88,1) 100%);
+}
+
+@media (max-width: 700px){
+    .AvatarPanel{
+        top: 7vh;
+        left: 10vw;
+        width: 80vw;
+        height: 40vh; 
+        position: absolute;       
+    }
+    .logos img{
+        width: 32px;
+        height: 24px;
+    }
+    .back{
+        width: 32px;
+        height: 24px;
+    }
+    .contTittle{
+        height: 25px;
+        font-size: 0.8rem;
+    }
+    .contTittle2{
+        height: 25px;
+    }
+    .button{
+        width: 60%;
+        font-weight: 300;
+        font-size: 0.7rem;
+    }
 }

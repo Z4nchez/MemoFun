@@ -6,12 +6,14 @@ export const MemoContext = createContext();
 export function MemoContextProvider (props) {
 
     const [gameOn, setGameOn] = useState(false)
-    const [memoPanelM, setMemoPanelM] = useState("1")   
+    const [memoPanelM, setMemoPanelM] = useState("1") 
+    const [gameOver, setGameOver] = useState(false) 
+    const [audioM, setAudioM] = useState(false) 
     const [arrayRecords, setArrayRecords] = useState([
-        {_id: '', pName: '', pLogo: '', pScore: 0},
-        {_id: '', pName: '', pLogo: '', pScore: 0},
-        {_id: '', pName: '', pLogo: '', pScore: 0},
-        {_id: '', pName: '', pLogo: '', pScore: 0}
+        {_id: '', pName: '', pLogo: '', pLog1: '', pLog2: '', pScore: 0},
+        {_id: '', pName: '', pLogo: '', pLog1: '', pLog2: '', pScore: 0},
+        {_id: '', pName: '', pLogo: '', pLog1: '', pLog2: '', pScore: 0},
+        {_id: '', pName: '', pLogo: '', pLog1: '', pLog2: '', pScore: 0}
         ]) 
 
     const [gStatus, setGStatus] = useState({
@@ -20,10 +22,12 @@ export function MemoContextProvider (props) {
         turnPoints: 0,
         timePoints: 0,
         range: "",
-        rangeN: 0,
+        rangeN: 1,
         turns: 0,
         progress: 0,
         record: 0,
+        recordRange: "",
+        recordRangeN: 1,
         start: 0,
         timeG: 0
       })
@@ -88,6 +92,18 @@ export function MemoContextProvider (props) {
         {id: 39, img1: "back", img2: "cube-zanahoria", par: "zanahoria", state: 0}
     ])
 
+    const [actualPlayer, setActualPlayer] = useState({pName: "", pLogo: "https://res.cloudinary.com/dabb8jxxh/image/upload/v1678468962/MemoFun/1_avatar_sqygs9.png", pLog1: "rgb(147,147,147)", pLog2:"linear-gradient(0deg, rgba(147,147,147,1) 0%, rgba(176,176,176,1) 100%)", pScore: 0, range:"Baby", rangeN: 1, pass: ""})
+
+    function checkField (value) {
+        const regex = /^[a-zA-Z0-9\_\ \-]{1,12}$/;
+        if(regex.test(value) || value === ""){
+            return true
+        }
+        else{
+            return false
+        }
+    }
+
     function UpdateCube (cube, data, listShuffle){
        
         const newList = listShuffle.map(element => {
@@ -117,8 +133,23 @@ export function MemoContextProvider (props) {
         }))
     }
 
-    function RegisterUser (user, pass){
-        
+    function RegisterUser (newUser) {
+        fetch(`${process.env.REACT_APP_SERVERURL}/api/players`, {
+            method: "POST",
+            body: JSON.stringify(newUser),
+            headers: {
+              "Content-Type": "application/json",
+              Accept: "application/json",
+            },
+        });
+    }
+
+    function winGame() {
+        const newList = listCubes.map(element => {
+            element.state = 3;
+            return element
+        });
+        setListCubes(newList)
     }
 
     function loadRecords() {
@@ -142,12 +173,8 @@ export function MemoContextProvider (props) {
             .then(() => {
                 setArrayRecords(records)
             })
-            .then(() => {
-                console.log(records)
-            })
 
-    }
-    
+    }   
 
     return (<MemoContext.Provider value={{
         setMemoPanelM,
@@ -155,11 +182,19 @@ export function MemoContextProvider (props) {
         UpdateCube,
         getPairs,
         backPairs,
+        checkField,
         setGameOn,
         setGStatus,
         loadRecords,
         setArrayRecords,
         RegisterUser,
+        setActualPlayer,
+        winGame,
+        setGameOver,
+        setAudioM,
+        audioM,
+        gameOver,
+        actualPlayer,
         arrayRecords,
         gStatus,
         gameOn,

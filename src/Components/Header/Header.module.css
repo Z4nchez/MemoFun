@@ -24,3 +24,31 @@
     height: 80%;
     width: auto;
 }
+.audioCont {
+    height: 80%;
+    width: auto;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 95vw;
+}
+.audioCont img{
+    height: 70%;
+    width: auto;
+    cursor: pointer;
+}
+.audioCont img:hover{
+    filter: drop-shadow(0 0 8px rgb(75, 249, 255));
+}
+@media (max-width: 1600px){
+    .audioCont {
+        left: 90vw;
+    }
+}
+@media (max-width: 1000px){
+    .audioCont {
+        left: 85vw;
+    }
+}

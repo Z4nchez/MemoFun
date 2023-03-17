@@ -21,9 +21,10 @@ function Cube({dato, lista, turnoActual, setTurnoActual }) {
    
   return (
     <div className={styles.Cube}>
-      {dato.state === 0 && <img className={styles.anim1} onClick={() => {UpdateCube(dato, 1, lista); FlipCube(dato)}} alt="" src='back.svg'/>}
-      {dato.state === 1 && <img className={styles.anim1} onClick={() => {UpdateCube(dato, 0, lista); FlipCube(dato)}} alt="" src={`cube/${dato.img2}.png`}/>}
-      {dato.state === 2 && <img className={styles.anim1} onClick={() => UpdateCube(dato, 2, lista)} alt="" src="none.png"/>}
+      {dato.state === 0 && <img className={styles.anim1} onClick={() => {UpdateCube(dato, 1, lista); FlipCube(dato)}} alt="cube" src='back.svg'/>}
+      {dato.state === 1 && <img className={styles.anim1} onClick={() => {UpdateCube(dato, 0, lista); FlipCube(dato)}} alt="cube" src={`cube/${dato.img2}.png`}/>}
+      {dato.state === 2 && <img className={styles.anim1} onClick={() => UpdateCube(dato, 2, lista)} alt="cube" src="none.png"/>}
+      {dato.state === 3 && <img className={styles.bye} onClick={() => UpdateCube(dato, 3, lista)} alt="cube" src="none.png"/>}
     </div>
   )
 }

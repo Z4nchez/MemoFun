@@ -7,7 +7,7 @@ import ReactAudioPlayer from 'react-audio-player'
 
 function Game() {
 
-  const { listCubes, getPairs, backPairs, setGStatus, setMemoPanelM } = useContext(MemoContext);
+  const { listCubes, getPairs, backPairs, setGStatus, gStatus, setMemoPanelM, winGame, setGameOver, gameOver, audioM } = useContext(MemoContext);
 
     const efecto = useSpring({
         from: { opacity: 0, width: "60%", height: "80%" },
@@ -37,6 +37,14 @@ function Game() {
 
     const [timer, setTimer] = useState(0)
     const [startT, setStartT] = useState(0)
+    const [finished, setFinished] = useState(false)
+
+    useEffect(() => {
+      if(finished === true) { 
+        setTimeout(() => {winGame()}, 300)
+      }
+    }, [finished])
+    
 
     useEffect(() => {
       if (actualTurn.pick === 2){
@@ -61,9 +69,11 @@ function Game() {
         setStartT(1)
       }
       if(gameStatus.progress === 20){  
-        setStartT(0)     
-        setGameStatus({...gameStatus, timeG: timer})       
-        setMemoPanelM("4")
+        setStartT(0);
+        setGameOver(true);
+        setFinished(true);     
+        setGameStatus({...gameStatus, timeG: timer}) 
+        setTimeout(() => {setMemoPanelM("4")}, 2000)             
       }
       
     }, [actualTurn])
@@ -166,7 +176,9 @@ function Game() {
         rangeN: rrangeN,
         turns: gameStatus.turns,
         progress: gameStatus.progress,
-        record: gameStatus.record,
+        record: gStatus.record,
+        recordRange: gStatus.recordRange,
+        recordRangeN: gStatus.recordRangeN,
         start: 0,
         timeG: timeS
       })
@@ -175,7 +187,7 @@ function Game() {
     
   return (
     <animated.div className={styles.Game} style={efecto}>
-      <ReactAudioPlayer src="mega.mp3" autoPlay loop/>
+      {gameOver === false && <ReactAudioPlayer src="under.mp3" autoPlay loop muted={audioM}/>}
       <div className={styles.tittleGame}>
         <div className={styles.contTurns}>
           <h2>{`Turns: ${gameStatus.turns}`}</h2>

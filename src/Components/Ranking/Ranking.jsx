@@ -1,36 +1,21 @@
-import React from 'react'
-import { useState, useContext, useEffect } from 'react'
-import Login from "../Login/Login"
-import Register from "../Register/Register"
-import Ranking from '../Ranking/Ranking'
-import styles from "./Sesion.module.css"
-import Cubiks from "../Cubiks/Cubiks"
-import ReactAudioPlayer from 'react-audio-player'
+import React from "react";
+import { useContext } from "react";
+import styles from "./Ranking.module.css";
+import { useSpring, config, animated } from "react-spring";
 import { MemoContext } from "../../Context/MemoFunContext"
 
-function Sesion() {
+function Ranking() {
 
-    const [mode, setMode] = useState("1")
-    const { loadRecords, arrayRecords, audioM } = useContext(MemoContext)
-
-    useEffect(() => {
-        loadRecords()
-      }, [])
+    const efecto = useSpring({
+        from: { opacity: 0, width: "20%" },
+        to: { opacity: 1, width: "100%" },
+        config: config.default,
+      });
+    
+      const { arrayRecords } = useContext(MemoContext);
 
   return (
-    <div className={styles.Sesion}>
-        <ReactAudioPlayer src="home.mp3" autoPlay loop muted={audioM}/>
-        <div className={styles.tittleSesion}>
-            <div className={styles.tittleCont}>
-                <div className={styles.tittleA}>
-                    <div className={styles.linkSesion} onClick={() => setMode("3")}>Ranking</div>
-                </div>
-                <div className={styles.tittleB}>
-                    <div className={styles.linkSesion} onClick={() => setMode("1")}>Login</div>
-                    <div className={styles.linkSesion} onClick={() => setMode("2")}>Resgister</div>
-                </div>
-            </div>
-        </div>
+    <animated.div className={styles.Ranking} style={efecto}>
         <div className={styles.scores}>
             <div className={styles.scoreTittle}>
                 <div className={styles.scoreName}>Ranking</div>
@@ -64,20 +49,8 @@ function Sesion() {
                 <div className={styles.scoreValue}>{arrayRecords[0].pScore}</div>
             </div>
         </div>
-        <div className={styles.panel2}>
-            <Cubiks></Cubiks>
-        </div>
-        <div className={styles.panel0}>
-            {mode === "1" && <Login></Login>}
-            {mode === "2" && <Register></Register>}  
-            {mode === "3" && <Ranking></Ranking>}          
-        </div>       
-        <div className={styles.panel1}>
-            <Cubiks></Cubiks>
-        </div>
-    </div>
-    
+    </animated.div>
   )
 }
 
-export default Sesion
+export default Ranking

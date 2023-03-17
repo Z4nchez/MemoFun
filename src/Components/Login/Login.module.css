@@ -71,3 +71,36 @@
     color: rgba(223, 230, 230, 0.4);
     font-size: 1.2rem;
 }
+.contData h3{
+    color: rgb(253, 85, 85);
+}
+
+@media (max-width: 1000px) or (max-height: 800px){
+    .contUserLog img{
+        width: 160px;
+        height: 160px;
+    }
+    .contData{
+        font-size: 0.7rem;
+    }
+    .contData label{
+        height: 16px;
+        color: rgba(223, 230, 230, 0.4);
+        font-size: 1rem;
+    }
+    .contData input{
+        width: 100%;
+        height: 24px;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 16px;
+        border: 2px solid rgba(0, 0, 0, 0.2);
+        text-align: center;
+        color: aqua;
+        font-family: 'Chakra Petch', sans-serif;
+    }
+    .contButton input{
+        width: 60%;
+        height: 24px;
+        font-size: 0.8rem;
+    }
+}

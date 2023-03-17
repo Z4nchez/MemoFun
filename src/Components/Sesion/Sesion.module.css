@@ -2,7 +2,7 @@
     display: grid;
     width: 90%;
     height: 90%;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-areas: "tittle tittle tittle tittle tittle tittle"
                          "scores panel0 panel0 panel0 panel0 panel1"
@@ -27,9 +27,24 @@
     width: 100%;
     height: 80%;
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
     border-bottom: 2px solid rgba(197, 245, 245, 0.3);
+}
+.tittleA{
+    width: 40%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    visibility: hidden;
+}
+.tittleB{
+    width: 40%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 }
 .scores{
     grid-area: scores;
@@ -102,4 +117,41 @@
 }
 .linkSesion:hover{
     color: aqua;
+}
+.char{
+    width: auto;
+    height: 70%;
+    border-radius: 2px;
+}
+.char img{
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+}
+
+@media (max-width: 1400px) or (max-height: 800px){
+    .scoreGroup{
+        font-size: 0.6rem;
+    }
+}
+
+@media (max-width: 1000px) or (max-height: 800px){
+    .scores{
+        visibility: hidden;
+    }
+    .tittleA{
+        visibility: visible;
+    }
+    .panel1{
+        width: 0;
+    }
+    .panel2{
+        width: 0;
+    }
+    .scores{
+        width: 0;
+    }
+    .linkSesion{
+        font-size: 0.7rem;
+    }
 }

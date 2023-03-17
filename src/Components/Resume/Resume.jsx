@@ -4,12 +4,10 @@ import { useContext } from "react";
 import { useSpring, config, animated } from "react-spring";
 import { MemoContext } from "../../Context/MemoFunContext"
 import Star from "../Star/Star"
-import ReactAudioPlayer from 'react-audio-player'
 
 function Resume() {
 
-    const { gStatus, setMemoPanelM } = useContext(MemoContext)
-    const arrayStars = [];
+    const { gStatus, setMemoPanelM, setActualPlayer, actualPlayer, loadRecords, arrayRecords, setGameOver } = useContext(MemoContext)    
 
     const efecto = useSpring({
         from: { opacity: 0, width: "60%", height: "80%" },
@@ -17,14 +15,79 @@ function Resume() {
         config: config.default,
     });
 
+    const arrayStars = [];
+
     for(let i=0; gStatus.rangeN > i; i++){
         arrayStars.push(i)
     }
 
+    function newRecord(points, range, rangeN) {
+        let newRecordR = {
+            _id: actualPlayer._id,
+            pName: actualPlayer.pName,
+            pLogo: actualPlayer.pLogo, 
+            pLog1: actualPlayer.pLog1, 
+            pLog2: actualPlayer.pLog2, 
+            pScore: points, 
+            range: range, 
+            rangeN: rangeN,
+            pass: actualPlayer.pass
+        }
+
+        return newRecordR;
+    }
+
+    async function updatePlayer(status) {
+        if (status.points > status.record){
+            let newRecordR = await newRecord(status.points, status.range, status.rangeN)
+                fetch(`${process.env.REACT_APP_SERVERURL}/api/players/${newRecordR._id}`, {
+                    method: "PUT",
+                    body: JSON.stringify(newRecordR),
+                    headers: {
+                      "Content-Type": "application/json",
+                      Accept: "application/json",
+                    },
+                }) 
+                .then(setActualPlayer(newRecordR))
+                                      
+        }
+        else {
+            setActualPlayer({...actualPlayer, pScore: status.record, range: status.recordRange, rangeN: status.recordRangeN})
+        }
+    }
+
+    function updateRanking() {
+
+        let newRecord = arrayRecords[0]
+        
+        if (newRecord.pScore < gStatus.points){
+            newRecord.pName = actualPlayer.pName;
+            newRecord.pLogo = actualPlayer.pLogo;
+            newRecord.pLog1 = actualPlayer.pLog1;
+            newRecord.pLog2 = actualPlayer.pLog2;
+            newRecord.pScore = gStatus.points;
+        }
+        
+        saveRanking(newRecord._id, newRecord);
+    }
+
+    function saveRanking(id, record) {
+        fetch(`${process.env.REACT_APP_SERVERURL}/api/records/${id}`, {
+            method: "PUT",
+            body: JSON.stringify(record),
+            headers: {
+              "Content-Type": "application/json",
+              Accept: "application/json",
+            },
+        });
+    }
+
   return (
     <animated.div className={styles.Resume} style={efecto}>
-        <ReactAudioPlayer src="snowy.mp3" autoPlay loop/>
         <div className={styles.contScore}>
+            <div className={styles.contData} style={{justifyContent: 'center', backgroundColor: "rgb(30, 145, 173)"}}>
+                <h3 style={{color: "rgba(0, 0, 0, 0.9)"}}>{actualPlayer.pName}</h3>
+            </div>
             <div className={styles.contData}>
                 <h3>Turns:</h3>
                 <h3 style={{color: "orange"}}>{gStatus.turns}</h3>
@@ -41,9 +104,13 @@ function Resume() {
                 <h3>Time Points:</h3>
                 <h3 style={{color: "orange"}}>{gStatus.timePoints}</h3>
             </div>
-            <div className={styles.contData}>
+            <div className={styles.contData} style={{borderColor: "rgb(30, 145, 173)"}}>
                 <h3>Total Points:</h3>
                 <h3 style={{color: "yellow", fontSize: "1.2rem"}}>{gStatus.points}</h3>
+            </div>
+            <div className={styles.contData}>
+                <h3>Previous Record:</h3>
+                <h3 style={{color: "orange"}}>{gStatus.record}</h3>
             </div>
             <div className={styles.contData}>
                 <h3>Range:</h3>
@@ -55,7 +122,7 @@ function Resume() {
                 </div>
             </div>
             <div className={styles.contButton}>
-                <button onClick={() => setMemoPanelM("2")}>Exit</button>
+                <button onClick={() => {updateRanking(); updatePlayer(gStatus); setGameOver(false); setMemoPanelM("2"); loadRecords()}}>Exit</button>
             </div>
         </div>
     </animated.div>

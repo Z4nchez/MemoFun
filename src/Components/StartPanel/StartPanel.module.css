@@ -47,6 +47,7 @@
     border-radius: 4px;
 }
 .dataPanel{
+    margin-left: 10px;
     width: 87%;
     height: auto;
     display: flex;
@@ -160,4 +161,10 @@
 .buttonBack:hover{
     width: 160px;
     background-color: rgb(0, 153, 153);
+}
+
+@media (max-width: 700px) or (max-height: 500px){
+    .buttonStart{
+        width: 60%;
+    }
 }
