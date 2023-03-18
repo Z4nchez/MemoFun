@@ -97,7 +97,7 @@ function Login() {
         <div className={styles.contButton}>
           <input type="submit" value="Login" />
         </div>
-        <div className={styles.contData}>
+        <div className={styles.contData} style={{height: "12px"}}>
           {invalid === true && <h3>User doesn't exists</h3>}
         </div>
       </form>

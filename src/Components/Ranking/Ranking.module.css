@@ -50,3 +50,9 @@
     height: 100%;
     background-size: cover;
 }
+
+@media screen and (orientation: landscape) and (max-height: 769px){
+    .scores{
+        margin-bottom: 5%;
+    }
+}

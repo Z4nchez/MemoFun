@@ -83,3 +83,20 @@
         font-size: 0.6rem;
     }
 }
+
+@media screen and (orientation: landscape) and (max-height: 769px){
+    .contData, .contDataS{
+        height: 5%;
+    }
+    .contData h3{
+        color: aqua;
+        font-size: 0.7rem;
+    }
+    .contButton{
+        height: 20%;
+    }
+    .contButton button{
+        height: 20px;
+        font-size: 0.6rem;
+    }
+}

@@ -108,3 +108,23 @@
         font-size: 0.8rem;
     }
 }
+@media screen and (orientation: landscape) and (max-height: 769px){
+    .contData{
+        height: 20%;
+    }
+    .contData input{
+        height: 18px;
+        font-size: 0.7rem;
+        width: 80%;
+    }
+    .contData label{
+        height: 18px;
+        font-size: 0.9rem;
+    }
+    .contButton{
+        height: 20%;
+    }
+    .contTT h2{   
+        font-size: 1.2rem;    
+    }
+}

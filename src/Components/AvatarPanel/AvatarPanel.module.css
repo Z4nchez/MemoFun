@@ -180,3 +180,19 @@
         font-size: 0.7rem;
     }
 }
+
+@media screen and (orientation: landscape) and (max-height: 769px){
+    .contTittle, .contTittle2{
+        height: 20px;
+        font-size: 0.6rem;
+    }
+    .back{
+        width: 32px;
+        height: 24px;
+    }
+
+    .logos img{
+        width: 32px;
+        height: 24px;
+    }
+}
