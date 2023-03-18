@@ -151,7 +151,7 @@
     background: radial-gradient(circle, rgba(202,231,232,1) 0%, rgba(181,183,200,1) 46%, rgba(69,69,88,1) 100%);
 }
 
-@media screen and (max-width: 700px){
+@media screen and ((max-width: 700px) or (aspect-ratio: 16/9) or (aspect-ratio: 18/9) or (aspect-ratio: 19/9) or (aspect-ratio: 19.5/9) or (aspect-ratio: 20/9)){
     .AvatarPanel{
         top: 7vh;
         left: 10vw;

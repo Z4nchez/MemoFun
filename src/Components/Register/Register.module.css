@@ -83,7 +83,7 @@
     text-align: center;
 }
 
-@media screen and ((max-width: 1000px) or (max-height: 800px)){
+@media screen and ((max-width: 1000px) or (max-height: 800px) or (aspect-ratio: 16/9) or (aspect-ratio: 16/10) or (aspect-ratio: 18/9) or (aspect-ratio: 18.5/9) or (aspect-ratio: 19/9) or (aspect-ratio: 19.5/9) or (aspect-ratio: 20/9)){
     .contData{
         font-size: 0.7rem;
     }
