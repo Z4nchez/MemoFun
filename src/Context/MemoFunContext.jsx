@@ -152,6 +152,21 @@ export function MemoContextProvider (props) {
         setListCubes(newList)
     }
 
+    function allPairs() {
+        const newList = listCubes.map(element => {
+            element.state = 1;
+            return element
+        });
+        setListCubes(newList)
+    }
+    function allBack() {
+        const newList = listCubes.map(element => {
+            element.state = 0;
+            return element
+        });
+        setListCubes(newList)
+    }
+
     function loadRecords() {
 
         let records = [];
@@ -192,6 +207,8 @@ export function MemoContextProvider (props) {
         winGame,
         setGameOver,
         setAudioM,
+        allPairs,
+        allBack,
         audioM,
         gameOver,
         actualPlayer,

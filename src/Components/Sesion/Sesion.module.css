@@ -129,13 +129,13 @@
     background-size: cover;
 }
 
-@media (max-width: 1400px) or (max-height: 800px){
+@media screen and ((max-width: 1400px) or (max-height: 800px)){
     .scoreGroup{
         font-size: 0.6rem;
     }
 }
 
-@media (max-width: 1000px) or (max-height: 800px){
+@media screen and ((max-width: 1000px) or (max-height: 800px)){
     .scores{
         visibility: hidden;
     }

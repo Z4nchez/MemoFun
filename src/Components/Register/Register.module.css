@@ -83,7 +83,7 @@
     text-align: center;
 }
 
-@media (max-width: 1000px) or (max-height: 800px){
+@media screen and ((max-width: 1000px) or (max-height: 800px)){
     .contData{
         font-size: 0.7rem;
     }

@@ -75,7 +75,7 @@
     color: rgb(253, 85, 85);
 }
 
-@media (max-width: 1000px) or (max-height: 800px){
+@media screen and ((max-width: 1000px) or (max-height: 800px)){
     .contUserLog img{
         width: 160px;
         height: 160px;

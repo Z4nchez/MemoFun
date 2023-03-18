@@ -42,12 +42,12 @@
 .audioCont img:hover{
     filter: drop-shadow(0 0 8px rgb(75, 249, 255));
 }
-@media (max-width: 1600px){
+@media screen and (max-width: 1600px){
     .audioCont {
         left: 90vw;
     }
 }
-@media (max-width: 1000px){
+@media screen and (max-width: 1000px){
     .audioCont {
         left: 85vw;
     }

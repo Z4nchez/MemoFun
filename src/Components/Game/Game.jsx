@@ -7,13 +7,19 @@ import ReactAudioPlayer from 'react-audio-player'
 
 function Game() {
 
-  const { listCubes, getPairs, backPairs, setGStatus, gStatus, setMemoPanelM, winGame, setGameOver, gameOver, audioM } = useContext(MemoContext);
+  const { listCubes, getPairs, backPairs, setGStatus, gStatus, setMemoPanelM, winGame, setGameOver, gameOver, audioM, allBack, allPairs } = useContext(MemoContext);
 
     const efecto = useSpring({
         from: { opacity: 0, width: "60%", height: "80%" },
         to: { opacity: 1, width: "90%", height: "90%" },
         config: config.default,
     });
+
+    useEffect(() => {
+      setTimeout(() => {allPairs()}, 50)
+      setTimeout(() => {allBack()}, 100)
+    }, [])
+    
 
     const [gameStatus, setGameStatus] = useState({
       player: "",
@@ -73,7 +79,7 @@ function Game() {
         setGameOver(true);
         setFinished(true);     
         setGameStatus({...gameStatus, timeG: timer}) 
-        setTimeout(() => {setMemoPanelM("4")}, 2000)             
+        setTimeout(() => {setMemoPanelM("4")}, 2400)             
       }
       
     }, [actualTurn])
@@ -199,7 +205,7 @@ function Game() {
         </div>
         <div className={styles.contTime}>
           <h2>{`Time: ${timer}`}</h2>
-          {gameStatus.progress === 20 && setTimeout(() => {EndGame(timer)}, 1000)}
+          {gameStatus.progress === 20 && setTimeout(() => {EndGame(timer)}, 100)}
         </div>
       </div>
       <div className={styles.panelGame}>
