@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/memofun/static/css/main.2faa5600.css",
+    "main.js": "/memofun/static/js/main.afe02a78.js",
+    "index.html": "/memofun/index.html",
+    "main.2faa5600.css.map": "/memofun/static/css/main.2faa5600.css.map",
+    "main.afe02a78.js.map": "/memofun/static/js/main.afe02a78.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2faa5600.css",
+    "static/js/main.afe02a78.js"
+  ]
+}
