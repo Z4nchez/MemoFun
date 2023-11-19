@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/MemoFun/static/css/main.2faa5600.css",
-    "main.js": "/MemoFun/static/js/main.b0035858.js",
+    "main.js": "/MemoFun/static/js/main.937c0967.js",
     "index.html": "/MemoFun/index.html",
     "main.2faa5600.css.map": "/MemoFun/static/css/main.2faa5600.css.map",
-    "main.b0035858.js.map": "/MemoFun/static/js/main.b0035858.js.map"
+    "main.937c0967.js.map": "/MemoFun/static/js/main.937c0967.js.map"
   },
   "entrypoints": [
     "static/css/main.2faa5600.css",
-    "static/js/main.b0035858.js"
+    "static/js/main.937c0967.js"
   ]
 }
