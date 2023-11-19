@@ -1,0 +1,341 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
+.Cubiks{
+    width: 100%;
+    height: 90%;
+    overflow-y: hidden;
+    overflow-x: hidden;   
+}
+.cubiksPanel{
+    position: relative;
+    width: 200%;
+    height: 200%;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    -ms-grid-rows: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+        grid-template-areas: "p1 p2"
+                         "p3 p4";
+}
+.cPanel1{
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: p1;
+    width: 100%;
+    height: 100%;
+}
+.cPanel2{
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+    grid-area: p2;
+    width: 100%;
+    height: 100%;
+}
+.cPanel3{
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    grid-area: p3;
+    width: 100%;
+    height: 100%;
+}
+.cPanel4{
+    -ms-grid-row: 2;
+    -ms-grid-column: 2;
+    grid-area: p4;
+    width: 100%;
+    height: 100%;
+}
+.cube1Cont{
+    position: relative;
+    width: 20%;
+    height: 10%;
+    top: 10%;
+    left: 8%;   
+}
+.cube2Cont{
+    position: relative;
+    width: 24%;
+    height: 12%;
+    top: -8%;
+    left: 66%;    
+}
+.cube3Cont{
+    position: relative;
+    width: 10%;
+    height: 5%;
+    top: 2%;
+    left: 60%;
+}
+.cube4Cont{
+    position: relative;
+    width: 12%;
+    height: 6%;
+    top: 8%;
+    left: 22%;
+}
+.cube5Cont{
+    position: relative;
+    width: 40%;
+    height: 20%;
+    top: 10%;
+    left: 58%;
+}
+.cube6Cont{
+    position: relative;
+    width: 24%;
+    height: 12%;
+    top: 4%;
+    left: 14%;
+}
+.cube7Cont{
+    position: relative;
+    width: 20%;
+    height: 10%;
+    top: 10%;
+    left: 68%;
+}
+.cube8Cont{
+    position: relative;
+    width: 12%;
+    height: 6%;
+    top: 10%;
+    left: 20%;
+}
+.nonVisible{
+    visibility: hidden;
+}
+.cube{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    -webkit-box-shadow: 0 0 6px rgb(0, 55, 71);
+            box-shadow: 0 0 6px rgb(0, 55, 71);
+    border-radius: 4px;
+}
+.cubeA{
+    -webkit-animation: rotarA 8s ease-in-out infinite;
+            animation: rotarA 8s ease-in-out infinite;
+}
+.cubeB{
+    -webkit-animation: rotarB 4s ease-in-out infinite;
+            animation: rotarB 4s ease-in-out infinite;
+}
+.desplazamientoV{
+    -webkit-animation: despV 16s linear infinite;
+            animation: despV 16s linear infinite;
+}
+@-webkit-keyframes despV {
+    0%{
+        top: -100%;
+        left: -100%;
+    }
+    100%{
+        top: 0%;
+        left: 0%;
+    }
+}
+@keyframes despV {
+    0%{
+        top: -100%;
+        left: -100%;
+    }
+    100%{
+        top: 0%;
+        left: 0%;
+    }
+}
+@-webkit-keyframes rotarA {
+    0%{
+        width: 100%;
+        left: 0%;
+        background-color: rgba(0, 56, 56, 0.3);
+    }
+    20%{
+        width: 1%;
+        left: 49%;
+        background-color: rgba(0, 56, 56, 0.3);
+    }
+    25%{
+        width: 1%;
+        left: 49%;
+        background-color: rgba(0, 179, 155, 0.15);
+    }
+    45%{
+        width: 100%;
+        left: 0%;
+        background-color: rgba(0, 179, 155, 0.15);
+    }
+    50%{
+        width: 100%;
+        left: 0%;
+        background-color: rgba(0, 179, 155, 0.15);
+    }
+    70%{
+        width: 1%;
+        left: 49%;
+        background-color: rgba(0, 179, 155, 0.15);
+    }
+    75%{
+        width: 1%;
+        left: 49%;
+        background-color: rgba(0, 56, 56, 0.3);
+    }
+    95%{
+        width: 100%;
+        left: 0%;
+        background-color: rgba(0, 56, 56, 0.3);
+    }
+    100%{
+        width: 100%;
+        left: 0%;
+        background-color: rgba(0, 56, 56, 0.3);
+    }
+}
+@keyframes rotarA {
+    0%{
+        width: 100%;
+        left: 0%;
+        background-color: rgba(0, 56, 56, 0.3);
+    }
+    20%{
+        width: 1%;
+        left: 49%;
+        background-color: rgba(0, 56, 56, 0.3);
+    }
+    25%{
+        width: 1%;
+        left: 49%;
+        background-color: rgba(0, 179, 155, 0.15);
+    }
+    45%{
+        width: 100%;
+        left: 0%;
+        background-color: rgba(0, 179, 155, 0.15);
+    }
+    50%{
+        width: 100%;
+        left: 0%;
+        background-color: rgba(0, 179, 155, 0.15);
+    }
+    70%{
+        width: 1%;
+        left: 49%;
+        background-color: rgba(0, 179, 155, 0.15);
+    }
+    75%{
+        width: 1%;
+        left: 49%;
+        background-color: rgba(0, 56, 56, 0.3);
+    }
+    95%{
+        width: 100%;
+        left: 0%;
+        background-color: rgba(0, 56, 56, 0.3);
+    }
+    100%{
+        width: 100%;
+        left: 0%;
+        background-color: rgba(0, 56, 56, 0.3);
+    }
+}
+@-webkit-keyframes rotarB {
+    0%{
+        width: 1%;
+        left: 49%;
+        background-color: rgba(0, 56, 56, 0.3);
+    }
+    20%{
+        width: 100%;
+        left: 0%;
+        background-color: rgba(0, 56, 56, 0.3);
+    }
+    25%{
+        width: 100%;
+        left: 0%;
+        background-color: rgba(0, 56, 56, 0.3);
+    }
+    45%{
+        width: 1%;
+        left: 49%;
+        background-color: rgba(0, 56, 56, 0.3);
+    }
+    50%{
+        width: 1%;
+        left: 49%;
+        background-color: rgba(1, 168, 245, 0.15);
+    }
+    70%{
+        width: 100%;
+        left: 0%;
+        background-color: rgba(1, 168, 245, 0.15);
+    }
+    75%{
+        width: 100%;
+        left: 0%;
+        background-color: rgba(1, 168, 245, 0.15);
+    }
+    95%{
+        width: 1%;
+        left: 49%;
+        background-color: rgba(1, 168, 245, 0.15);
+    }
+    100%{
+        width: 1%;
+        left: 49%;
+        background-color: rgba(0, 56, 56, 0.3);
+    }
+}
+@keyframes rotarB {
+    0%{
+        width: 1%;
+        left: 49%;
+        background-color: rgba(0, 56, 56, 0.3);
+    }
+    20%{
+        width: 100%;
+        left: 0%;
+        background-color: rgba(0, 56, 56, 0.3);
+    }
+    25%{
+        width: 100%;
+        left: 0%;
+        background-color: rgba(0, 56, 56, 0.3);
+    }
+    45%{
+        width: 1%;
+        left: 49%;
+        background-color: rgba(0, 56, 56, 0.3);
+    }
+    50%{
+        width: 1%;
+        left: 49%;
+        background-color: rgba(1, 168, 245, 0.15);
+    }
+    70%{
+        width: 100%;
+        left: 0%;
+        background-color: rgba(1, 168, 245, 0.15);
+    }
+    75%{
+        width: 100%;
+        left: 0%;
+        background-color: rgba(1, 168, 245, 0.15);
+    }
+    95%{
+        width: 1%;
+        left: 49%;
+        background-color: rgba(1, 168, 245, 0.15);
+    }
+    100%{
+        width: 1%;
+        left: 49%;
+        background-color: rgba(0, 56, 56, 0.3);
+    }
+}

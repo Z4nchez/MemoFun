@@ -1,0 +1,38 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
+.memoPanel {
+  position: relative;
+  width: 99vw;
+  height: 88vh;
+  top: 0.5vh;
+  margin: auto;
+  border: 2px solid rgba(0, 202, 253, 0.911);
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 10;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: 'Chakra Petch', sans-serif;
+  flex-direction: column;
+}
+.footer{
+  height: 3vh;
+  text-decoration: none;
+  color: rgb(0, 167, 167);
+  cursor: pointer;
+}
+.footer:hover{
+  color: rgb(0, 255, 255);
+}

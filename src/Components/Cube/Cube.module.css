@@ -1,0 +1,122 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
+.Cube{
+    width: 11%;
+    height: 18%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    border-radius: 12px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(0, 0, 0, 0.2);
+}
+.Cube img{
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    cursor: pointer;
+    border-radius: 12px;
+}
+.Cube img:hover{
+    background-color: rgba(0, 195, 255, 0.2);
+}
+.anim1{
+    -webkit-animation: entrada .3s ease;
+            animation: entrada .3s ease;
+}
+@-webkit-keyframes entrada {
+    0%{
+        width: 0%;
+        height: 0%;
+    }
+    100%{
+        width: 100%;
+        height: 100%;
+    }
+}
+@keyframes entrada {
+    0%{
+        width: 0%;
+        height: 0%;
+    }
+    100%{
+        width: 100%;
+        height: 100%;
+    }
+}
+.bye{
+    background-color: rgba(255, 255, 255, 0.1);
+    -webkit-animation: salida 1.5s ease;
+            animation: salida 1.5s ease;
+}
+@-webkit-keyframes salida {
+    0%{
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+    50%{
+        background-color: rgba(0, 195, 255, 0.3);
+    }
+    100%{
+        background-color: rgba(255, 255, 255, 0);
+    }
+}
+@keyframes salida {
+    0%{
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+    50%{
+        background-color: rgba(0, 195, 255, 0.3);
+    }
+    100%{
+        background-color: rgba(255, 255, 255, 0);
+    }
+}
+
+@media screen and ((max-width: 1000px) or (max-height: 600px)){
+    .Cube{
+        width: 15%;
+        height: 10%;
+    }
+}
+@media screen and ((max-width: 530px) or (max-height: 600px)){
+    .Cube{
+        width: 18%;
+        height: 8%;
+    }
+}
+@media screen and (max-width: 300px){
+    .Cube{
+        width: 15%;
+        height: 6%;
+    }
+}
+@media screen and ((aspect-ratio: 16/9) or (aspect-ratio: 16/10) or (aspect-ratio: 18/9) or (aspect-ratio: 18.5/9) or (aspect-ratio: 19/9) or (aspect-ratio: 19.5/9) or (aspect-ratio: 20/9)){
+    .Cube{
+        width: 10%;
+        height: 15%;
+    }
+}
+@media screen and ((min-width: 1000px) and (max-height: 640px)){
+    .Cube{
+        width: 10%;
+        height: 15%;
+    }
+}
+
+@media screen and (orientation: landscape) and (max-height: 769px){
+    .Cube{
+        width: 10%;
+        height: 16%;
+    }
+}

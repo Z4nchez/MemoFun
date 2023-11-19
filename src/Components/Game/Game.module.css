@@ -1,0 +1,156 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
+.Game{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 90%;
+    height: 90%;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+}
+.panelGame{
+    width: 95%;
+    height: 90%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align:center;
+        -ms-flex-align:center;
+            align-items:center;
+    -ms-flex-wrap:wrap;
+        flex-wrap:wrap;
+    gap: 10px;
+}
+.tittleGame{
+    width: 95%;
+    height: 5%;
+    border-radius: 14px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align:center;
+        -ms-flex-align:center;
+            align-items:center;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(0, 0, 0, 0.2);
+}
+.contTurns{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 30%;
+    height: 100%;
+    font-size: 0.8rem;
+    color: aquamarine;
+}
+.contProgress{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 30%;
+    height: 100%;
+}
+.maxProgress{
+    width: 80%;
+    height: 12px;
+    border-radius: 6px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+}
+.progress{
+    width: 100%;
+    height: 12px;
+    border-radius: 6px;
+    background-color: rgb(0, 212, 113);
+}
+.contTime{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 30%;
+    height: 100%;
+    font-size: 0.8rem;
+    color: aquamarine;
+}
+
+@media screen and ((max-width: 1000px) or (max-height: 600px) or (aspect-ratio: 16/9) or (aspect-ratio: 16/10) or (aspect-ratio: 18/9) or (aspect-ratio: 18.5/9) or (aspect-ratio: 19/9) or (aspect-ratio: 19.5/9) or (aspect-ratio: 20/9)){
+    .Cube{
+        width: 16%;
+        height: 10%;
+    }
+    .contTurns{
+        font-size: 0.5rem;
+    }
+    .contTime{
+        font-size: 0.5rem;
+    }
+}
+@media screen and (max-width: 300px){
+    .Cube{
+        width: 15%;
+        height: 7%;
+    }
+    .contTurns{
+        font-size: 0.4rem;
+    }
+    .contTime{
+        font-size: 0.4rem;
+    }
+}
+
+@media screen and (orientation: landscape) and (max-height: 769px){
+    .maxProgress{
+        height: 8px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+    .progress{
+        height: 8px;
+        background-color: rgb(0, 212, 113);
+    }
+}
